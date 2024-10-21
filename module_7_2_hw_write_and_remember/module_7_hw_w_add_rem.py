@@ -20,7 +20,6 @@
 #   print(elem)
 
 
-
 # def custom_write(file_name, strings):
 #     file = open(file_name, 'a', encoding='utf-8')
 #     start_ = file.tell()
@@ -42,6 +41,19 @@
 #         results.append(((index, start_), string_info))
 #     file.close()
 #     return results
+
+#
+# def custom_write(file_name, strings):
+#     results = []
+#     file = open(file_name, 'a', encoding='utf-8')
+#     for index, str_1 in enumerate(strings, start=1):
+#         start_ = file.tell()
+#         string_info = str(str_1)
+#         file.write(string_info + '\n')
+#         results.append(((index, start_), string_info))
+#         results_1 = (results)
+#     file.close()
+#     return results_1
 #
 #
 # info = [
@@ -55,6 +67,16 @@
 # for elem in result:
 #     print(elem)
 
+# def custom_write(file_name, strings):
+#     results = {}
+#     file = open(file_name, 'a', encoding='utf-8')
+#     for index, str_1 in enumerate(strings, start=1):
+#         start_ = file.tell()
+#         string_info = str(str_1)
+#         file.write(string_info + '\n')
+#         results[index] = (start_, string_info)
+#     file.close()
+#     return results
 
 def custom_write(file_name, strings):
     results = {}
@@ -63,7 +85,7 @@ def custom_write(file_name, strings):
         start_ = file.tell()
         string_info = str(str_1)
         file.write(string_info + '\n')
-        results[index] = (start_, string_info)
+        results[index, start_] = string_info
     file.close()
     return results
 
@@ -78,6 +100,3 @@ info = [
 result = custom_write('test.txt', info)
 for elem in result.items():
     print(elem)
-
-
-
